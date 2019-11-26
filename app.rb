@@ -8,7 +8,13 @@ get '/secret' do
   "I am feeling red today"
 end
 
-get '/cat' do
+get '/random-cat' do
   @name = [ "Bob", "Frodo", "Jimbob" ].sample
+  erb(:index)
+end
+
+get '/named-cat' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
